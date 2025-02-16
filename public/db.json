@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {
+      "question": "¿Cuántas veces al día se recomienda cepillarse los dientes?",
+      "options": ["Una vez", "Dos veces", "Tres veces", "Cuatro veces"],
+      "answer": "Dos veces"
+    },
+    {
+      "question": "¿Cuánto tiempo mínimo debe durar el cepillado?",
+      "options": ["30 segundos", "1 minuto", "2 minutos", "5 minutos"],
+      "answer": "2 minutos"
+    }
+  ]
+}
