@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import bgImage from "../assets/Preguntas-OdontoQuiz.jpg";
 
 const Quiz = () => {
@@ -8,6 +9,8 @@ const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [correctAnswer, setCorrectAnswer] = useState(null);
+
+  const navigate = useNavigate(); // Inicializa la función navigate
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + "db.json")
@@ -36,6 +39,13 @@ const Quiz = () => {
     }
   };
 
+  const handleRestartQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowResult(false);
+    navigate("/"); // Redirige a la página Intro
+  };
+
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen p-6 bg-cover bg-center"
@@ -52,11 +62,7 @@ const Quiz = () => {
             </p>
             <button
               className="mt-6 w-1/2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl shadow-md transition-all"
-              onClick={() => {
-                setCurrentQuestion(0);
-                setScore(0);
-                setShowResult(false);
-              }}
+              onClick={handleRestartQuiz} // Usa la función handleRestartQuiz
             >
               🔄 Reiniciar Quiz
             </button>

@@ -18,11 +18,11 @@ const Intro = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="bg-white bg-opacity-90 text-center p-12 rounded-2xl shadow-xl"
+        className="bg-white bg-opacity-90 text-center p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-md"
       >
-        <h1 className="text-8xl font-extrabold text-blue-900 mb-8">ODONTOQUIZ</h1>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 mb-4 md:mb-8">ODONTOQUIZ</h1>
         <button
-          className="px-8 py-4 bg-blue-700 text-white text-2xl font-semibold rounded-lg shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-blue-800"
+          className="px-8 py-4 bg-blue-700 text-white text-lg md:text-2xl font-semibold rounded-lg shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-blue-800"
           onClick={startQuiz}
         >
           Empezar el Quiz
