@@ -3,19 +3,16 @@ import Layout from "../layout/Layout";
 import Intro from "../components/Intro";
 import Quiz from "../pages/Quiz";
 
-export const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Intro />, // Muestra la pantalla de inicio en "/"
-      },
-      {
-        path: "quiz",
-        element: <Quiz />, // El quiz se muestra en "/quiz"
-      },
-    ],
-  },
-]);
+export const routes = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { index: true, element: <Intro /> },
+        { path: "quiz", element: <Quiz /> },
+      ],
+    },
+  ],
+  { basename: "/" } // Asegura que funcione en producción
+);
