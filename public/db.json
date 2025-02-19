@@ -1,14 +1,54 @@
 {
   "questions": [
     {
-      "question": "¿Cuántas veces al día se recomienda cepillarse los dientes?",
-      "options": ["Una vez", "Dos veces", "Tres veces", "Cuatro veces"],
-      "answer": "Dos veces"
+      "question": "¿Cuál de estas ITS puede causar úlceras orales dolorosas?",
+      "options": ["Clamidia", "VIH", "Sífilis", "Gonorrea"],
+      "answer": "Sífilis"
     },
     {
-      "question": "¿Cuánto tiempo mínimo debe durar el cepillado?",
-      "options": ["30 segundos", "1 minuto", "2 minutos", "5 minutos"],
-      "answer": "2 minutos"
+      "question": "¿Cómo se manifiesta la sífilis en la boca en su etapa primaria?",
+      "options": ["Manchas blancas en la lengua", "Úlcera indolora (Chancro sifilítico)", "Sangrado de encías", "Halitosis severa"],
+      "answer": "Úlcera indolora (Chancro sifilítico)"
+    },
+    {
+      "question": "¿Cuál de estas ITS pueden causar inflamación en la garganta y afectar las encías?",
+      "options": ["Clamidia", "Gonorrea", "Tricomoniasis", "Hepatitis C"],
+      "answer": "Gonorrea"
+    },
+    {
+      "question": "¿Qué profesional debe evaluar las lesiones orales sospechosas del ITS?",
+      "options": ["Solo el médico general", "Solo el odontólogo", "Odontólogo y médico especializado en ITS", "Farmacéutico"],
+      "answer": "Odontólogo y médico especializado en ITS"
+    },
+    {
+      "question": "¿Qué ITS puede causar candidiasis oral recurrente debido a la inmunosupresión?",
+      "options": ["Gonorrea", "Herpes simple", "VIH", "Clamidia"],
+      "answer": "VIH"
+    },
+    {
+      "question": "¿Cuál es el principal síntoma oral del VPH?",
+      "options": ["Úlceras aftosas", "Verrugas orales o papilomas", "Manchas rojas en la lengua", "Inflamación de la úvula"],
+      "answer": "Verrugas orales o papilomas"
+    },
+    {
+      "question": "¿Cómo se puede prevenir la transmisión del VPH que afecta la cavidad oral?",
+      "options": ["Uso de antibióticos", "Evitar compartir cubiertos", "Uso de preservativo y vacunación contra el VPH", "Enjuague bucal diario"],
+      "answer": "Uso de preservativo y vacunación contra el VPH"
+    },
+    {
+      "question": "¿Cuál de estas ITS puede causar lesiones ulcerativas en la cavidad oral y faringe?",
+      "options": ["Tricomoniasis", "Clamidia", "Gonorrea", "Herpes simple"],
+      "answer": "Herpes simple"
+    },
+    {
+      "question": "¿Cuál de estas enfermedades puede causar xerostomía en pacientes con ITS?",
+      "options": ["VIH", "Sífilis", "Clamidia", "Gonorrea"],
+      "answer": "VIH"
+    },
+    {
+      "question": "¿Qué hábitos aumentan el riesgo de transmisión de ITS en la cavidad oral?",
+      "options": ["Sexo oral sin protección", "Besos casuales con personas infectadas", "Uso compartido de cepillos dentales", "Relaciones sexuales con preservativos"],
+      "answer": "Sexo oral sin protección"
     }
   ]
 }
