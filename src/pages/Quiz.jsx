@@ -16,14 +16,21 @@ const Quiz = () => {
     fetch(import.meta.env.BASE_URL + "db.json")
       .then((res) => res.json())
       .then((data) => {
-        setQuestions(data.questions);
+        // Aleatorizar las preguntas
+        const shuffledQuestions = data.questions.sort(() => Math.random() - 0.5);
+        setQuestions(shuffledQuestions);
       })
       .catch((err) => console.error("Error cargando preguntas:", err));
   }, []);
 
   const handleAnswerClick = (option) => {
-    setSelectedAnswer(option);
-    setCorrectAnswer(questions[currentQuestion].answer);
+    if (selectedAnswer === option) {
+      setSelectedAnswer(null); // Permitir deseleccionar la respuesta
+      setCorrectAnswer(null);
+    } else {
+      setSelectedAnswer(option);
+      setCorrectAnswer(questions[currentQuestion].answer);
+    }
   };
 
   const handleNextQuestion = () => {
@@ -69,14 +76,14 @@ const Quiz = () => {
           </div>
         ) : questions.length > 0 ? (
           <div className="p-4 rounded-lg shadow-md">
-            <h2 className="text-lg md:text-xl font-semibold text-gray-900">
+            <h2 className="text-lg md:text-xl font-semibold text-gray-900 break-words text-center leading-snug">
               {questions[currentQuestion].question}
             </h2>
             <div className="mt-6 space-y-2 flex flex-col items-center">
               {questions[currentQuestion].options.map((option, index) => (
                 <button
                   key={index}
-                  className={`w-2/3 md:w-1/3 px-4 py-2 text-sm md:text-base rounded-xl border shadow-md font-medium text-gray-700 transition-all
+                  className={`w-full md:w-2/3 px-4 py-2 text-sm md:text-base rounded-xl border shadow-md font-medium text-gray-700 transition-all
                     ${
                       selectedAnswer === option
                         ? option === correctAnswer
@@ -85,7 +92,6 @@ const Quiz = () => {
                         : "bg-white hover:bg-gray-200"
                     }`}
                   onClick={() => handleAnswerClick(option)}
-                  disabled={selectedAnswer !== null}
                 >
                   {option}
                 </button>
