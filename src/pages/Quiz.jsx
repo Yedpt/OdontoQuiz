@@ -8,7 +8,6 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
-  const [correctAnswer, setCorrectAnswer] = useState(null);
 
   const navigate = useNavigate(); // Inicializa la función navigate
 
@@ -24,21 +23,14 @@ const Quiz = () => {
   }, []);
 
   const handleAnswerClick = (option) => {
-    if (selectedAnswer === option) {
-      setSelectedAnswer(null); // Permitir deseleccionar la respuesta
-      setCorrectAnswer(null);
-    } else {
-      setSelectedAnswer(option);
-      setCorrectAnswer(questions[currentQuestion].answer);
-    }
+    setSelectedAnswer(option);
   };
 
   const handleNextQuestion = () => {
-    if (selectedAnswer === correctAnswer) {
+    if (selectedAnswer === questions[currentQuestion].answer) {
       setScore(score + 1);
     }
     setSelectedAnswer(null);
-    setCorrectAnswer(null);
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
@@ -84,13 +76,7 @@ const Quiz = () => {
                 <button
                   key={index}
                   className={`w-full md:w-2/3 px-4 py-2 text-sm md:text-base rounded-xl border shadow-md font-medium text-gray-700 transition-all
-                    ${
-                      selectedAnswer === option
-                        ? option === correctAnswer
-                          ? "bg-green-500 text-white"
-                          : "bg-red-500 text-white"
-                        : "bg-white hover:bg-gray-200"
-                    }`}
+                    ${selectedAnswer === option ? "bg-green-500 text-white" : "bg-white hover:bg-gray-200"}`}
                   onClick={() => handleAnswerClick(option)}
                 >
                   {option}
